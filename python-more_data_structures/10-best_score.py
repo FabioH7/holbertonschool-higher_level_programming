@@ -5,7 +5,7 @@ def best_score(a_dictionary):
     max_key = None
     first = True
     for key in a_dictionary:
-        if first  == True:
+        if first is True:
             max_key = key
             first = False
         if a_dictionary[key] > a_dictionary[max_key]:
