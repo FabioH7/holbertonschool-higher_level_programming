@@ -5,6 +5,8 @@ def roman_to_int(roman_string):
     "CD": 400, "CM": 900}
     total = 0
     i = 0
+    if roman_string is not str or roman_string is None:
+        return total
     while i < len(roman_string):
         sub = roman_string[i: i + 2]
         if sub in roman_dict:
