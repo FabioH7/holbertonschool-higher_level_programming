@@ -8,5 +8,4 @@ Div must be an int or a float
 
 	>>> matrix_divided([[1, 2, 3], [2, 3, 4]], 'hi')
 	Traceback (most recent call last):
-	TypeError: div must be a number	
-
+    	TypeError: div must be a number
