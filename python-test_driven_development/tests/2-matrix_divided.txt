@@ -1,0 +1,12 @@
+Module 2-matrix_divided
+
+def matrix_divided(matrix, div) defines division in every cell of the matrix
+
+	>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+Div must be an int or a float
+
+	>>> matrix_divided([[1, 2, 3], [2, 3, 4]], 'hi')
+	Traceback (most recent call last):
+	TypeError: div must be a number	
+
