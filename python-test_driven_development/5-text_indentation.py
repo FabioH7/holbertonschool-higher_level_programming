@@ -6,6 +6,6 @@ def text_indentation(text):
         print('{}'.format(text[i]), end="")
         if text[i] in char:
             print('\n')
-            if text[i] == ' ':
+            if text[i + 1] == " ":
                 i += 1
         i += 1
