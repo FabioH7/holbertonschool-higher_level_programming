@@ -1,5 +1,9 @@
 #!/usr/bin/python3
+"""Text indentation module"""
+
+
 def text_indentation(text):
+    """Indents text whenever needed"""
     if type(text) is not str:
         raise TypeError('text must be a string')
     char = ['.', '?', ':']
