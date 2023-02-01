@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 """ Substracts all cells of a matrix"""
+
+
 def matrix_divided(matrix, div):
     """ Takes a matrix and divides every int or float inside it by div
-    
     """
     if type(div) not in [int, float]:
         raise TypeError('div must be a number')
@@ -20,7 +21,6 @@ def matrix_divided(matrix, div):
             new_row.append(round(elem / div, 2))
         new_matrix.append(new_row)
     return new_matrix
-
 
 
 def raise_err():
