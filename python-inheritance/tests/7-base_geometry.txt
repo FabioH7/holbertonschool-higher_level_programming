@@ -32,6 +32,16 @@ It cannot be a data structure
 	>>> ls.integer_validator('my_int', [5])
 	Traceback (most recent call last):
         TypeError: my_int must be an integer
+
+	>>> ls = BaseGeometry()
+        >>> ls.integer_validator('my_int', (5,))
+        Traceback (most recent call last):
+        TypeError: my_int must be an integer
+
+	>>> ls = BaseGeometry()
+        >>> ls.integer_validator('my_int', {4, 4})
+        Traceback (most recent call last):
+        TypeError: my_int must be an integer
 	
 It raises a ValueError if 'Value' is lower or equal to 0
 
