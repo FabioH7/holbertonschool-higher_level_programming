@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-'''is instance module ''' 
+'''is instance module '''
 
 
 def is_kind_of_class(obj, a_class):
