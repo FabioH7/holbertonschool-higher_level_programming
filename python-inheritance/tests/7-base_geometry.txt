@@ -4,6 +4,11 @@ Integer validator method checks the type and value of the second argument
 
 	>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
+If an int bigger than 0 is passed, it does not do anything
+
+	>>> bg = BaseGeometry()
+        >>> bg.integer_validator("my_int", 3)
+
 It raises a TypeError if 'value' is not an int
 
 	>>> bg = BaseGeometry()
@@ -51,3 +56,11 @@ It needs 2 arguments at all times
         >>> bg.integer_validator()
         Traceback (most recent call last):
         TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+Area raises an exception
+
+	>>> bg = BaseGeometry()
+	>>> bg.area()
+	Traceback (most recent call last):
+	Exception: area() is not implemented
+ 
