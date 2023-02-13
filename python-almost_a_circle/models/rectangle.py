@@ -75,3 +75,10 @@ class Rectangle(Base):
             for j in range(self.width):
                 print("#", end="")
             print()
+
+    def __str__(self):
+        """returning string representation"""
+        tostr = "[Rectangle] ({}) ".format(self.id)
+        tostr += "{}/{} - ".format(self.__x, self.__y)
+        tostr += "{}/{}".format(self.__width, self.__height)
+        return tostr
