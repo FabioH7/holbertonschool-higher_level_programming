@@ -87,10 +87,18 @@ class Rectangle(Base):
         tostr += "{}/{}".format(self.__width, self.__height)
         return tostr
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """updates rectangle object values"""
         a = []
         for key in self.__dict__.keys():
             a.append(key)
-        for i in range(len(args)):
-            self.__dict__[a[i]] = args[i]
+        if len(args) != 0:
+            for i in range(len(args)):
+                self.__dict__[a[i]] = args[i]
+        else:
+            for key, value in kwargs.items():
+                for attr in a:
+                    if key == 'id':
+                        self.__dict__[key] = value
+                    elif key in attr:
+                        self.__dict__[attr] = value
