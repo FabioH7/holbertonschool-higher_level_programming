@@ -22,7 +22,6 @@ class Square(Rectangle):
     """Square class, inherits from rectangle"""
     def __init__(self, size, x=0, y=0, id=None):
         Rectangle.__init__(self, size, size, x, y, id)
-        self.size = size
 
     def __str__(self):
         tostr = "[Square] ({}) ".format(self.id)
@@ -36,6 +35,5 @@ class Square(Rectangle):
 
     @size.setter
     def size(self, size):
-        raise_exception(width=size)
         self.width = size
         self.height = size
