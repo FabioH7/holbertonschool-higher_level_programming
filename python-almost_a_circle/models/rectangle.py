@@ -102,3 +102,11 @@ class Rectangle(Base):
                         self.__dict__[key] = value
                     elif key in attr:
                         self.__dict__[attr] = value
+
+    def to_dictionary(self):
+        """Returns dictionary representation of rectangle object"""
+        ls = ['id', 'width', 'height', 'x', 'y']
+        toDict = {}
+        for item in ls:
+            toDict[item] = getattr(self, item)
+        return toDict
