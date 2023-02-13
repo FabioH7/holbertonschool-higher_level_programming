@@ -6,6 +6,7 @@ from models.base import Base
 
 
 def r(**kwargs):
+    """Raises exceptions for rectangle class"""
     sides = ['width', 'height']
     ls = ['x', 'y']
     for key, value in kwargs.items():
