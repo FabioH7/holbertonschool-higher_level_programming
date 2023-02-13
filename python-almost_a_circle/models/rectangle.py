@@ -5,7 +5,7 @@
 from models.base import Base
 
 
-def r(**kwargs):
+def raise_exception(**kwargs):
     """Raises exceptions for rectangle class"""
     sides = ['width', 'height']
     ls = ['x', 'y']
@@ -22,7 +22,7 @@ class Rectangle(Base):
     """Base class"""
     def __init__(self, width, height, x=0, y=0, id=None):
         """Constructor"""
-        r(width=width, height=height, x=x, y=y)
+        raise_exception(width=width, height=height, x=x, y=y)
         Base.__init__(self, id)
         self.__width = width
         self.__height = height
@@ -35,7 +35,7 @@ class Rectangle(Base):
 
     @width.setter
     def width(self, width):
-        r(width=width)
+        raise_exception(width=width)
         self.__width = width
 
     @property
@@ -44,7 +44,7 @@ class Rectangle(Base):
 
     @height.setter
     def height(self, height):
-        r(height=height)
+        raise_exception(height=height)
         self.__height = height
 
     @property
@@ -53,7 +53,7 @@ class Rectangle(Base):
 
     @x.setter
     def x(self, x):
-        r(x=x)
+        raise_exception(x=x)
         self.__x = x
 
     @property
@@ -62,5 +62,8 @@ class Rectangle(Base):
 
     @y.setter
     def y(self, y):
-        r(y=y)
+        raise_exception(y=y)
         self.__y = y
+
+    def area(self):
+        return self.__width * self.__height
