@@ -12,7 +12,7 @@ class Square(Rectangle):
         self.size = size
 
     def __str__(self):
-        tostr = "[Square] ({})".format(self.id)
+        tostr = "[Square] ({}) ".format(self.id)
         tostr += "{}/{} - ".format(self.x, self.y)
         tostr += "{}".format(self.size)
         return tostr
