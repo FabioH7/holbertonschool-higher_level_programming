@@ -88,6 +88,7 @@ class Rectangle(Base):
         return tostr
 
     def update(self, *args):
+        """updates rectangle object values"""
         a = []
         for key in self.__dict__.keys():
             a.append(key)
