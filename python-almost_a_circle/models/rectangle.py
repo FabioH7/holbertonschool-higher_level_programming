@@ -86,3 +86,10 @@ class Rectangle(Base):
         tostr += "{}/{} - ".format(self.__x, self.__y)
         tostr += "{}/{}".format(self.__width, self.__height)
         return tostr
+
+    def update(self, *args):
+        a = []
+        for key in self.__dict__.keys():
+            a.append(key)
+        for i in range(len(args)):
+            self.__dict__[a[i]] = args[i]
