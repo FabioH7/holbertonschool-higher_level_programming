@@ -5,10 +5,23 @@
 from models.base import Base
 
 
+def r(**kwargs):
+    sides = ['width', 'height']
+    ls = ['x', 'y']
+    for key, value in kwargs.items():
+        if type(value) is not int:
+            raise TypeError("{} must be an integer".format(key))
+        if key in sides and value <= 0:
+            raise ValueError("{} must be > 0".format(key))
+        if key in ls and value < 0:
+            raise ValueError("{} must be >= 0".format(key))
+
+
 class Rectangle(Base):
     """Base class"""
     def __init__(self, width, height, x=0, y=0, id=None):
         """Constructor"""
+        r(width=width, height=height, x=x, y=y)
         Base.__init__(self, id)
         self.__width = width
         self.__height = height
@@ -21,6 +34,7 @@ class Rectangle(Base):
 
     @width.setter
     def width(self, width):
+        r(width=width)
         self.__width = width
 
     @property
@@ -29,6 +43,7 @@ class Rectangle(Base):
 
     @height.setter
     def height(self, height):
+        r(height=height)
         self.__height = height
 
     @property
@@ -37,6 +52,7 @@ class Rectangle(Base):
 
     @x.setter
     def x(self, x):
+        r(x=x)
         self.__x = x
 
     @property
@@ -45,4 +61,5 @@ class Rectangle(Base):
 
     @y.setter
     def y(self, y):
+        r(y=y)
         self.__y = y
