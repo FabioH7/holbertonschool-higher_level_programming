@@ -38,3 +38,10 @@ class Base:
                     class_dict = cls.to_dictionary(elem)
                     ls.append(class_dict)
                 f.write(Base.to_json_string(ls))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """Turns a string to a python object"""
+        if json_string is None:
+            return []
+        return json.loads(json_string)
