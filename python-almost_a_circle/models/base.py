@@ -3,6 +3,7 @@
 
 
 import json
+import os
 
 
 class Base:
@@ -48,9 +49,24 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
+        """Creates a new object"""
         if cls.__name__ == 'Rectangle':
             new_obj = cls(1, 1)
         elif cls.__name__ == 'Square':
             new_obj = cls(1)
         new_obj.update(**dictionary)
         return new_obj
+
+    @classmethod
+    def load_from_file(cls):
+        """Gets a list of objects from json file"""
+        filename = '{}.json'.format(cls.__name__)
+        ls = []
+        if os.path.exists(filename):
+            with open(filename, 'r') as f:
+                obj_json_string = f.read()
+            obj_ls = cls.from_json_string(obj_json_string)
+            for elem in obj_ls:
+                obj = cls.create(**elem)
+                ls.append(obj)
+        return ls
