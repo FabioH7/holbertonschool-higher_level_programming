@@ -48,6 +48,9 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        new_obj = cls(1, 2)
+        if cls.__name__ == 'Rectangle':
+            new_obj = cls(1, 1)
+        elif cls.__name__ == 'Square':
+            new_obj = cls(1)
         new_obj.update(**dictionary)
         return new_obj
