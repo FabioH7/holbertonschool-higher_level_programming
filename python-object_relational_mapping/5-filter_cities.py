@@ -19,8 +19,11 @@ if __name__ == '__main__':
     cur.execute(query, (sys.argv[4], ))
     cities = cur.fetchall()
     i = 0
-    for i in range(len(cities) - 1):
-        print("{}, ".format(cities[i][0]), end='')
-    print("{}".format(cities[i + 1][0]))
+    for i in range(len(cities)):
+        if i == len(cities) - 1:
+            print("{}".format(cities[i][0]), end='')
+        else:
+            print("{}, ".format(cities[i][0]), end='')
+    print()
     cur.close()
     db.close()
