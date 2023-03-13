@@ -1,10 +1,11 @@
 #!/usr/bin/python3
 """Get all rows of a table"""
-import sys
 import MySQLdb
+import sys
 
 
 if __name__ = '__main__':
+
     r = sys.argv[1]
     p = sys.argv[2]
     db = MySQLdb.connect(host='localhost', user=r, passwd=p, db=sys.argv[3])
