@@ -1,7 +1,8 @@
 #!/usr/bin/python3
+"""Get all rows of a table"""
 import sys
 import MySQLdb
-''' Get all rows of a table '''
+
 
 if __name__ = '__main__':
     r = sys.argv[1]
