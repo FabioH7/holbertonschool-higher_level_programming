@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-'''get all rows of a table'''
+''' Get all rows of a table '''
 
 
 import sys
