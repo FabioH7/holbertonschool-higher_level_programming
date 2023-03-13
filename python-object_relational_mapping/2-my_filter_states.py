@@ -10,7 +10,7 @@ if __name__ == '__main__':
     d = sys.argv[3]
     db = MySQLdb.connect(host='localhost', port=3306, user=u, passwd=p, db=d)
     cur = db.cursor()
-    cur.execute("SELECT * FROM states WHERE name = '{}'".format(sys.argv[4]))
+    cur.execute("SELECT * FROM states WHERE name LIKE '{}'".format(sys.argv[4]))
     states = cur.fetchall()
     for state in states:
         print(state)
