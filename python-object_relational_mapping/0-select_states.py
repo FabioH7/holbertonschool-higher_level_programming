@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+'''get all rows of a table'''
 import sys
 import MySQLdb
 
