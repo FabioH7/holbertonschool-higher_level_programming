@@ -1,18 +1,18 @@
 #!/usr/bin/python3
-"""Get all rows of a table"""
+"""script that lists all states from the database hbtn_0e_0_usa"""
 import MySQLdb
 import sys
 
 
-if __name__ = '__main__':
+if __name__ == '__main__':
 
-    r = sys.argv[1]
-    p = sys.argv[2]
-    db = MySQLdb.connect(host='localhost', user=r, passwd=p, db=sys.argv[3])
-    cur = db.cursor()
-    cur.execute('SELECT * FROM states')
-    states = cur.fetchall()
-    for state in states:
-        print(state)
-    cur.close()
+    db = MySQLdb.connect(host="localhost", port=3306,
+                         user=sys.argv[1], passwd=sys.argv[2],
+                         db=sys.argv[3], charset="utf8")
+    cr = db.cursor()
+    cr.execute("SELECT * FROM states ORDER BY states.id")
+    res = cr.fetchall()
+    for rows in res:
+        print(rows)
+    cr.close()
     db.close()
