@@ -1,9 +1,8 @@
 #!/usr/bin/python3
-''' Get all rows of a table '''
-
-
 import sys
 import MySQLdb
+''' Get all rows of a table '''
+
 
 r = sys.argv[1]
 p = sys.argv[2]
