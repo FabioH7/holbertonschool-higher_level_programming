@@ -14,8 +14,8 @@ if __name__ == "__main__":
                            .format(u, p, db), pool_pre_ping=True)
     Base.metadata.create_all(engine)
     session = Session(engine)
-    results = session.query(City, State).filter(City.state_id == State.id).all()
-    for cities, states in results:
+    result = session.query(City, State).filter(City.state_id == State.id).all()
+    for cities, states in result:
         print("{}: ({}) {}".format(states.name, cities.id, cities.name))
     session.commit()
     session.close()
