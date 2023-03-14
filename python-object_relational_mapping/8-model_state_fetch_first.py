@@ -13,6 +13,10 @@ if __name__ == "__main__":
                            .format(u, p, db), pool_pre_ping=True)
     Base.metadata.create_all(engine)
     session = Session(engine)
-    state = session.query(State).order_by(State.id).first()
-    print("{}: {}".format(state.id, state.name))
+    state = session.query(State).order_by(State.id)
+    if state.count == 0:
+        print('Nothing')
+    else:
+        state = state.first()
+        print("{}: {}".format(state.id, state.name))
     session.close()
