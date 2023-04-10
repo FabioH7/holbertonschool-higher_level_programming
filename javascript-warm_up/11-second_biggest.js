@@ -11,4 +11,8 @@ for (const number of process.argv) {
 const final = myArray.filter((x) => {
   return x < Math.max(...myArray);
 });
-console.log(Math.max(...final));
+if (final.length === 0) {
+  console.log(0);
+} else {
+  console.log(Math.max(...final));
+}
