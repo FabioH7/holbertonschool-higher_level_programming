@@ -9,6 +9,6 @@ for (const number of process.argv) {
   myNum++;
 }
 const final = myArray.filter((x) => {
-  return x < Math.max(...myArray)
+  return x < Math.max(...myArray);
 });
 console.log(Math.max(...final));
