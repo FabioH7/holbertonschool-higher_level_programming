@@ -10,8 +10,9 @@ request(api, function (error, response, body) {
     console.error('error:', error); // Print the error if one occurred
   }
   data = body;
-}).pipe(fs.writeFile(filename, data, 'utf-8', (error) => {
+})
+fs.writeFile(filename, data, 'utf-8', (error) => {
   if (error) {
     console.log(error);
   }
-}));
+});
