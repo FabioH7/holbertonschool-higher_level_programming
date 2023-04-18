@@ -4,8 +4,6 @@ const request = require('request');
 const fs = require('fs');
 const api = process.argv[2];
 const filename = process.argv[3];
-let data = '';
-let text = null
 
 request(api, function (error, response, body) {
   if (error) {
@@ -16,5 +14,4 @@ request(api, function (error, response, body) {
       console.log(error);
     }
   });
-})
-
+});
