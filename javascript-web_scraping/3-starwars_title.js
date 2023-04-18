@@ -8,6 +8,6 @@ request(api, function (error, response, body) {
   if (error) {
     console.error('error:', error); // Print the error if one occurred
   }
-  const x = JSON.parse(response.body) // Print the response status code if a response was received
-  console.log(x.title)
+  const x = JSON.parse(response.body); // Print the response status code if a response was received
+  console.log(x.title);
 });
