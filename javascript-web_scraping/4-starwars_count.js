@@ -9,5 +9,5 @@ request(api, function (error, response, body) {
   }
   const films = JSON.parse(response.body); // Print the response status code if a response was received
   const filtered = films.results.filter(film => film.characters.includes('https://swapi-api.hbtn.io/api/people/18/'));
-  return filtered.length;
+  console.log(filtered.length);
 });
