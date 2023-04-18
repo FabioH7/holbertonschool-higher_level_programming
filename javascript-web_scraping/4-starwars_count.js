@@ -8,12 +8,13 @@ request(api, function (error, response, body) {
     console.error('error:', error); // Print the error if one occurred
   }
   const films = JSON.parse(response.body); // Print the response status code if a response was received
-  const filtered = films.results.filter((film) => {
-    for (character of film.characters) {
+  const filtered = films.results.filter(film => {
+    for (const character of film.characters) {
       if (character.includes('18')) {
-        return film
+        return true;
       }
     }
+    return false;
   });
   console.log(filtered.length);
 });
