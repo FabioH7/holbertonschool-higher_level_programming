@@ -9,7 +9,7 @@ request(api, function (error, response, body) {
   if (error) {
     console.error('error:', error); // Print the error if one occurred
   }
-  data = body;
+  data = response.body;
 })
 fs.writeFile(filename, data, 'utf-8', (error) => {
   if (error) {
