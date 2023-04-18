@@ -1,7 +1,7 @@
 #!/usr/bin/node
-
+const process = require('process');
 const request = require('request');
-const api = 'https://swapi-api.hbtn.io/api/films/';
+const api = process.argv[2];
 
 request(api, function (error, response, body) {
   if (error) {
